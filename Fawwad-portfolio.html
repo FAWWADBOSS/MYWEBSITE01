@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fawwad Faiyaz Khanche - Portfolio</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #add8e6; /* Light Blue Background */
+      color: #333;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #ffffff; /* White background */
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: space-around;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #4682b4; /* Darker Blue for text */
+      font-size: 18px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      transform: scale(1.1);
+      color: #ff7f50; /* Coral Hover color */
+    }
+
+    /* Home Section */
+    #home {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      padding-top: 80px; /* Space for fixed navbar */
+      overflow: hidden;
+    }
+
+    /* Background Video */
+    #home video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure the video covers the entire section */
+      z-index: -1; /* Place the video behind other content */
+    }
+
+    #home h1 {
+      font-size: 40px;
+      color: #fff; /* White text for visibility */
+      z-index: 1;
+    }
+
+    #home p {
+      font-size: 20px;
+      color: #fff; /* White text for visibility */
+      z-index: 1;
+    }
+
+    #home a {
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #4682b4;
+      color: white;
+      border-radius: 5px;
+      margin-top: 20px;
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+
+    #home a:hover {
+      transform: scale(1.1);
+      background-color: #ff7f50;
+    }
+
+    /* Skills Section */
+    #skills {
+      padding: 50px 0;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    #skills h2 {
+      font-size: 30px;
+    }
+
+    .skill {
+      display: inline-block;
+      margin: 10px;
+      font-size: 20px;
+      color: #4682b4;
+      transition: transform 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: scale(1.1);
+      color: #ff7f50;
+    }
+
+    /* Projects Section */
+    #projects {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+      padding: 60px 20px;
+      background-color: #f0f0f0;
+      margin-top: 100px;
+      flex-wrap: wrap;
+    }
+
+    .project-img {
+      width: 30%; /* Ensuring images take up 1/3rd of the space */
+      margin: 20px;
+      position: relative;
+    }
+
+    .project-img img {
+      width: 100%; /* Ensure the images scale to container width */
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .project-img img:hover {
+      transform: scale(1.05) rotate(5deg);
+    }
+
+    /* Project Links */
+    .project-links {
+      text-align: center;
+      margin-top: 20px; /* Increased margin for better distance from image */
+    }
+
+    .case-study-btn {
+      margin-top: 20px; /* Increased margin for better spacing */
+      padding: 10px 20px;
+      background-color: #4682b4;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .case-study-btn:hover {
+      background-color: #ff7f50;
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 50px 0;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    #contact h2 {
+      font-size: 30px;
+      color: #333;
+    }
+
+    .contact-info {
+      font-size: 20px;
+      color: #4682b4;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #4682b4;
+      color: white;
+    }
+
+    /* Media Query for Mobile Responsiveness */
+    @media (max-width: 768px) {
+      #projects {
+        flex-direction: column; /* Stack projects vertically on small screens */
+        padding: 20px 10px;
+      }
+
+      .project-img {
+        width: 100%; /* Full width for smaller screens */
+        margin: 10px 0; /* Reduce spacing */
+      }
+
+      .project-links {
+        display: flex;
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Add spacing between buttons */
+      }
+
+      .case-study-btn {
+        padding: 8px 15px; /* Slightly smaller padding for smaller screens */
+        font-size: 14px; /* Reduce font size */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/fawwad-faiyaz-4b7179340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a></li>
+      <li><a href="https://medium.com" target="_blank">Medium</a></li>
+      <li><a href="https://dribbble.com/Fawwad-Boss/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22Fawwad-Boss%22&utm_content=%22About%20Fawwad-Boss%22&utm_medium=Social_Share" target="_blank">Dribbble</a></li> <!-- Dribbble Profile Link -->
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <video autoplay muted loop>
+      <source src="https://i.imgur.com/SJ44GP7.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h1>Fawwad Faiyaz Khanche</h1>
+    <p>UX Designer | Web Designer | BCA Student</p>
+    <a href="#contact">Contact Me</a>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill">Web Designer</div>
+    <div class="skill">UX/UI Designer</div>
+    <div class="skill">UI/UX Design Research</div>
+    <div class="skill">Figma</div>
+    <div class="skill">Canva</div>
+    <div class="skill">Adobe Photoshop</div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="project-img">
+      <img src="https://i.imgur.com/ERdWI0J.jpg" alt="Project 1">
+      <h3>WEBSITE DESIGN PRACTICE</h3>
+      <div class="project-links">
+        <a href="https://www.figma.com/proto/JPst4lgGBq5Boih0nnFf9G/ASSIGNMENT?node-id=34-71&t=Bw5NcyWa6G1s1mQz-1" target="_blank">View Project</a>
+      </div>
+    </div>
+    <div class="project-img">
+      <img src="https://i.imgur.com/uuFVnI3.jpg" alt="Project 2">
+      <h3>LAMPUNG WEBSITE</h3>
+      <div class="project-links">
+        <a href="https://www.figma.com/proto/Z8ztCPE8gnkEyKrueaAMAy/vocab-assignment?node-id=107-4&t=YRH8D0IAfMyY0Lox-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=107%3A4" target="_blank">View Project</a>
+      </div>
+    </div>
+    <div class="project-img">
+      <img src="https://i.imgur.com/gjGa8BK.jpg" alt="Project 3">
+      <h3>COLOR VISUALIZER PROTOTYPE</h3>
+      <div class="project-links">
+        <a href="https://www.figma.com/proto/wWbf0aHxOYXUMrnRIiQGq1/COLOR-VISUALIZER.-(Copy)?node-id=1-2&starting-point-node-id=1%3A2&t=CNATnjlblCv51zGL-1" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Information</h2>
+    <div class="contact-info">
+      <p>Email: khanchefawwad3@gmail.com</p>
+      <p>Mobile: 7768018592</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Fawwad Faiyaz Khanche. All rights reserved.</p>
+  </footer>
+</body>
+</html>
